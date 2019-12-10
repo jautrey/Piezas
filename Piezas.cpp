@@ -61,7 +61,7 @@ Piece Piezas::dropPiece(int column)
   }
 
   //out of bounds
-  if(column > 4 || column < 0)
+  if(column >= 4 || column < 0)
   {
     return Invalid;
   }
@@ -84,7 +84,7 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-  if(column > 4 || column < 0 || row > 3 || row < 0)
+  if(column >= 4 || column < 0 || row >= 3 || row < 0)
   {
     return Invalid;
   }
