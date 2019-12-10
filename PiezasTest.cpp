@@ -64,5 +64,6 @@ TEST(PiezasTest, rowOverflow)
   p.dropPiece(0);
   p.dropPiece(0);
   p.dropPiece(0);
+  p.dropPiece(0);
 	ASSERT_EQ(p.dropPiece(0), Invalid);
 }
