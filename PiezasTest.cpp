@@ -43,3 +43,12 @@ TEST(PiezasTest, dropPieceSecond)
   p.dropPiece(2);
 	ASSERT_EQ(p.dropPiece(1), O);
 }
+
+TEST(PiezasTest, rowOverflow)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(0);
+	ASSERT_EQ(p.dropPiece(0), Invalid);
+}
