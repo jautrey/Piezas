@@ -31,10 +31,16 @@ TEST(PiezasTest, colLow)
 	ASSERT_EQ(p.dropPiece(4), Invalid);
 }
 
-TEST(PiezasTest, dropPieceFirst)
+TEST(PiezasTest, dropPieceFirstCol)
 {
   Piezas p;
-	ASSERT_EQ(p.dropPiece(1), X);
+	ASSERT_EQ(p.dropPiece(0), X);
+}
+
+TEST(PiezasTest, dropPieceFourthCol)
+{
+  Piezas p;
+	ASSERT_EQ(p.dropPiece(3), X);
 }
 
 TEST(PiezasTest, dropPieceSecond)
@@ -42,6 +48,14 @@ TEST(PiezasTest, dropPieceSecond)
   Piezas p;
   p.dropPiece(2);
 	ASSERT_EQ(p.dropPiece(1), O);
+}
+
+TEST(PiezasTest, dropPieceThird)
+{
+  Piezas p;
+  p.dropPiece(2);
+  p.dropPiece(2);
+	ASSERT_EQ(p.dropPiece(2), X);
 }
 
 TEST(PiezasTest, rowOverflow)
