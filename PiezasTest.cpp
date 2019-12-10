@@ -19,11 +19,11 @@ TEST(PiezasTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-TEST(PiezasTest, colHigh)
-{
-  Piezas p;
-	ASSERT_EQ(p.dropPiece(-1), Invalid);
-}
+// TEST(PiezasTest, colHigh)
+// {
+//   Piezas p;
+// 	ASSERT_EQ(p.dropPiece(-1), Invalid);
+// }
 
 TEST(PiezasTest, colLow)
 {
@@ -35,4 +35,11 @@ TEST(PiezasTest, dropPieceFirst)
 {
   Piezas p;
 	ASSERT_EQ(p.dropPiece(1), X);
+}
+
+TEST(PiezasTest, dropPieceSecond)
+{
+  Piezas p;
+  p.dropPiece(2);
+	ASSERT_EQ(p.dropPiece(1), O);
 }
