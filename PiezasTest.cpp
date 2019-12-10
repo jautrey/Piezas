@@ -67,3 +67,30 @@ TEST(PiezasTest, rowOverflow)
   p.dropPiece(0);
 	ASSERT_EQ(p.dropPiece(0), Invalid);
 }
+
+TEST(PiezasTest, pieceAtFirst)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(0);
+	ASSERT_EQ(p.pieceAt(0,0), X);
+}
+
+TEST(PiezasTest, pieceAtFirst)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(0);
+	ASSERT_EQ(p.pieceAt(0,1), O);
+}
+
+TEST(PiezasTest, pieceAtFirst)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(0);
+	ASSERT_EQ(p.pieceAt(0,2), X);
+}
