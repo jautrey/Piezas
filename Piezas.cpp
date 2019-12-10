@@ -22,10 +22,10 @@
 **/
 Piezas::Piezas()
 {
-  board.resize(BOARD_COLS);
+  board.resize(BOARD_ROWS);
   for(int i = 0; i < BOARD_COLS; i++)
   {
-    board[i].resize(BOARD_ROWS);
+    board[i].resize(BOARD_COLS);
   }
   turn = X;
 }
@@ -61,16 +61,16 @@ Piece Piezas::dropPiece(int column)
   }
 
   //out of bounds
-  if(column > 3 || column < 0)
+  if(column > 4 || column < 0)
   {
     return Invalid;
   }
 
   for(int i = 0; i < 3; i++)
   {
-    if(board[column][i] != Blank)
+    if(board[i][column] != Blank)
     {
-      board[column][i] = cur;
+      board[i][column] = cur;
       return cur;
     }
   }
@@ -84,12 +84,12 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-  if(column > 3 || column < 0 || row > 3 || row < 0)
+  if(column > 4 || column < 0 || row > 3 || row < 0)
   {
     return Invalid;
   }
 
-  return board[column][row];
+  return board[row][column];
 }
 
 /**
