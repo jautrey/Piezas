@@ -19,11 +19,11 @@ TEST(PiezasTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-// TEST(PiezasTest, colHigh)
-// {
-//   Piezas p;
-// 	ASSERT_EQ(p.dropPiece(-1), Invalid);
-// }
+TEST(PiezasTest, colHigh)
+{
+  Piezas p;
+	ASSERT_EQ(p.dropPiece(-1), Invalid);
+}
 
 TEST(PiezasTest, colLow)
 {

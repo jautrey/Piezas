@@ -22,9 +22,11 @@
 **/
 Piezas::Piezas()
 {
-  for(int i=0; i<BOARD_COLS; i++)
-    for(int j=0; j<BOARD_ROWS; j++)
-      board[i][j] = Blank;
+  board.resize(BOARD_COLS);
+  for(int i = 0; i < BOARD_COLS; i++)
+  {
+    board[i].resize(BOARD_ROWS);
+  }
   turn = X;
 }
 
@@ -72,7 +74,8 @@ Piece Piezas::dropPiece(int column)
       return cur;
     }
   }
-    return Blank;
+
+    return Invalid;
 }
 
 /**
