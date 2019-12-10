@@ -99,3 +99,27 @@ TEST(PiezasTest, pieceRowThree)
   p.dropPiece(0);
 	ASSERT_EQ(p.pieceAt(2,0), X);
 }
+
+TEST(PiezasTest, dropPieces1)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+	ASSERT_EQ(p.pieceAt(1,0), O);
+}
+
+TEST(PiezasTest, checkBlankPiece)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+	ASSERT_EQ(p.pieceAt(2,0), O);
+}
