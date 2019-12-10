@@ -77,7 +77,7 @@ TEST(PiezasTest, pieceAtFirst)
 	ASSERT_EQ(p.pieceAt(0,0), X);
 }
 
-TEST(PiezasTest, pieceAtFirst)
+TEST(PiezasTest, pieceAtSecond)
 {
   Piezas p;
   p.dropPiece(0);
@@ -86,7 +86,7 @@ TEST(PiezasTest, pieceAtFirst)
 	ASSERT_EQ(p.pieceAt(0,1), O);
 }
 
-TEST(PiezasTest, pieceAtFirst)
+TEST(PiezasTest, pieceAtThird)
 {
   Piezas p;
   p.dropPiece(0);
