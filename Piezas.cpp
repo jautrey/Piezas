@@ -47,7 +47,7 @@ void Piezas::reset()
 Piece Piezas::dropPiece(int column)
 {
   Piece cur;
-  if(turn = X)
+  if(turn == X)
   {
     cur = X;
     turn = O;
