@@ -22,10 +22,10 @@
 **/
 Piezas::Piezas()
 {
-  board.resize(BOARD_ROWS);
-  for(int i = 0; i < BOARD_COLS; i++)
+  board.resize(BOARD_ROWS-1);
+  for(int i = 0; i < BOARD_COLS-1; i++)
   {
-    board[i].resize(BOARD_COLS);
+    board[i].resize(BOARD_COLS-1);
   }
   turn = X;
 }

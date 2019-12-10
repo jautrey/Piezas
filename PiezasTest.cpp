@@ -64,33 +64,38 @@ TEST(PiezasTest, rowOverflow)
   p.dropPiece(0);
   p.dropPiece(0);
   p.dropPiece(0);
-  p.dropPiece(0);
 	ASSERT_EQ(p.dropPiece(0), Invalid);
 }
 
-TEST(PiezasTest, pieceAtFirst)
+TEST(PiezasTest, pieceRowOne)
 {
   Piezas p;
-  p.dropPiece(0);
-  p.dropPiece(0);
   p.dropPiece(0);
 	ASSERT_EQ(p.pieceAt(0,0), X);
 }
 
-TEST(PiezasTest, pieceAtSecond)
+TEST(PiezasTest, dropThreeRowOne)
 {
   Piezas p;
-  p.dropPiece(0);
-  p.dropPiece(0);
-  p.dropPiece(0);
-	ASSERT_EQ(p.pieceAt(0,1), O);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(1);
+	ASSERT_EQ(p.pieceAt(0,1), X);
 }
 
-TEST(PiezasTest, pieceAtThird)
+TEST(PiezasTest, pieceRowTwo)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+	ASSERT_EQ(p.pieceAt(1,0), O);
+}
+
+TEST(PiezasTest, pieceRowThree)
 {
   Piezas p;
   p.dropPiece(0);
   p.dropPiece(0);
   p.dropPiece(0);
-	ASSERT_EQ(p.pieceAt(0,2), X);
+	ASSERT_EQ(p.pieceAt(2,0), X);
 }
