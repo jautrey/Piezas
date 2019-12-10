@@ -22,7 +22,9 @@
 **/
 Piezas::Piezas()
 {
-  board.resize(BOARD_COLS, vector<Piece>(BOARD_ROWS, Blank));
+  for(int i=0; i<BOARD_COLS; i++)
+    for(int j=0; j<BOARD_ROWS; j++)
+      board[i][j] = Blank;
   turn = X;
 }
 
