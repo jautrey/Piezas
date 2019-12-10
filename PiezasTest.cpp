@@ -18,8 +18,21 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
-TEST(PiezasTest, boardStart)
+
+TEST(PiezasTest, colHigh)
 {
   Piezas p;
-	ASSERT_EQ(p.board[0][0], Blank);
+	ASSERT_EQ(p.dropPiece(-1), Invalid);
+}
+
+TEST(PiezasTest, colLow)
+{
+  Piezas p;
+	ASSERT_EQ(p.dropPiece(4), Invalid);
+}
+
+TEST(PiezasTest, dropPieceFirst)
+{
+  Piezas p;
+	ASSERT_EQ(p.dropPiece(1), X);
 }

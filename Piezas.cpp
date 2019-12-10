@@ -58,6 +58,12 @@ Piece Piezas::dropPiece(int column)
     turn = X;
   }
 
+  //out of bounds
+  if(column > 3 || column < 0)
+  {
+    return Invalid;
+  }
+
   for(int i = 0; i < 3; i++)
   {
     if(board[column][i] != Blank)
