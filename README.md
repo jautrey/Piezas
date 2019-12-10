@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jautrey/Piezas.svg?branch=master)](https://travis-ci.org/jautrey/Piezas) [![Coverage Status](https://coveralls.io/repos/github/jautrey/Piezas/badge.svg?branch=master)](https://coveralls.io/github/jautrey/Piezas?branch=master)
+
 # Piezas
 
 ## Associated Enumerated Types
