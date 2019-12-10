@@ -68,7 +68,7 @@ Piece Piezas::dropPiece(int column)
 
   for(int i = 0; i < 3; i++)
   {
-    if(board[i][column] != Blank)
+    if(board[i][column] == Blank)
     {
       board[i][column] = cur;
       return cur;
