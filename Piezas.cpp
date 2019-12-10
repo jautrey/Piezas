@@ -22,7 +22,7 @@
 **/
 Piezas::Piezas()
 {
-  board.resize(BOARD_ROWS, vector<Piece>(BOARD_COLS, Blank));
+  board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
   turn = X;
 }
 
