@@ -124,7 +124,7 @@ TEST(PiezasTest, checkBlankPiece)
 	ASSERT_EQ(p.pieceAt(2,0), Blank);
 }
 
-TEST(PiezasTest, checkBlankPiece)
+TEST(PiezasTest, resetBoard)
 {
   Piezas p;
   p.dropPiece(0);
