@@ -121,5 +121,16 @@ TEST(PiezasTest, checkBlankPiece)
   p.dropPiece(0);
   p.dropPiece(1);
   p.dropPiece(2);
-	ASSERT_EQ(p.pieceAt(2,0), O);
+	ASSERT_EQ(p.pieceAt(2,0), Blank);
+}
+
+TEST(PiezasTest, checkBlankPiece)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(0);
+  p.reset();
+	ASSERT_EQ(p.pieceAt(0,0), Blank);
 }

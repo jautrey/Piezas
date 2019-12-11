@@ -32,6 +32,11 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+  for(int i = 0; i < BOARD_ROWS; i++)
+  {
+    board[i].clear();
+  }
+  board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
 }
 
 /**
