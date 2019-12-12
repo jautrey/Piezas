@@ -126,17 +126,17 @@ Piece Piezas::gameState()
     for(int j = 0; j < BOARD_ROWS-1; j++)
     {
       //Pieces match
-      if(board[i][j] != Blank && board[j][i] == board[j+1][i])
+      if(board[j][i] != Blank && board[j][i] == board[j+1][i])
       {
         //three or more in a row
-        if(lastPiece == board[i][j])
+        if(lastPiece == board[j][i])
         {
           lastStreak++;
-          if(board[i][j] == X && lastStreak > xScore)
+          if(board[j][i] == X && lastStreak > xScore)
           {
             xScore = lastStreak;
           }
-          if(board[i][j] == O && lastStreak > oScore)
+          if(board[j][i] == O && lastStreak > oScore)
           {
             oScore = lastStreak;
           }
@@ -144,22 +144,62 @@ Piece Piezas::gameState()
         //two in a row
         else
         {
-          if(board[i][j] == X && lastStreak > xScore)
+          if(board[j][i] == X && lastStreak > xScore)
           {
             xScore = 2;
           }
-          if(board[i][j] == O && lastStreak > oScore)
+          if(board[j][i] == O && lastStreak > oScore)
           {
             oScore = 2;
           }
           lastStreak = 1;
         }
-        lastPiece = board[i][j];
+        lastPiece = board[j][i];
       }
       lastPiece = Invalid;
       lastStreak = 1;
     }
   }
+
+  // for(int i = 0; i < BOARD_COLS-1; i++)
+  // {
+  //   for(int j = 0; j < BOARD_ROWS; j++)
+  //   {
+  //     //Pieces match
+  //     if(board[i][j] != Blank && board[j][i] == board[j][i+1])
+  //     {
+  //       //three or more in a row
+  //       if(lastPiece == board[i][j])
+  //       {
+  //         lastStreak++;
+  //         if(board[i][j] == X && lastStreak > xScore)
+  //         {
+  //           xScore = lastStreak;
+  //         }
+  //         if(board[i][j] == O && lastStreak > oScore)
+  //         {
+  //           oScore = lastStreak;
+  //         }
+  //       }
+  //       //two in a row
+  //       else
+  //       {
+  //         if(board[i][j] == X && lastStreak > xScore)
+  //         {
+  //           xScore = 2;
+  //         }
+  //         if(board[i][j] == O && lastStreak > oScore)
+  //         {
+  //           oScore = 2;
+  //         }
+  //         lastStreak = 1;
+  //       }
+  //       lastPiece = board[i][j];
+  //     }
+  //     lastPiece = Invalid;
+  //     lastStreak = 1;
+  //   }
+  // }
 
   if(xScore > oScore)
   {
