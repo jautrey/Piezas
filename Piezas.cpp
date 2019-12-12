@@ -206,7 +206,7 @@ Piece Piezas::gameState()
   }
   else if(xScore < oScore)
   {
-    return X;
+    return O;
   }
   else
   {

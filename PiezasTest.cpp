@@ -229,7 +229,7 @@ TEST(PiezasTest, XwinsHoriz)
   p.dropPiece(3);
   p.dropPiece(3);//x
   p.dropPiece(2);
-	ASSERT_EQ(p.gameState(), O);
+	ASSERT_EQ(p.gameState(), X);
 }
 
 TEST(PiezasTest, OwinsHoriz)
