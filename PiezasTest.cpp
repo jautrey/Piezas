@@ -131,6 +131,25 @@ TEST(PiezasTest, resetBoard)
 	ASSERT_EQ(p.pieceAt(0,0), Blank);
 }
 
+TEST(PiezasTest, resetFullBoard)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.reset();
+	ASSERT_EQ(p.pieceAt(2,2), Blank);
+}
+
 TEST(PiezasTest, gameNotOver)
 {
   Piezas p;
@@ -163,16 +182,34 @@ TEST(PiezasTest, Xwins)
 {
   Piezas p;
   p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(0);
   p.dropPiece(2);
   p.dropPiece(0);
   p.dropPiece(3);
-  p.dropPiece(0);
-  p.dropPiece(2);
   p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(2);
   p.dropPiece(3);
-  p.dropPiece(1);
-  p.dropPiece(2);
-  p.dropPiece(1);
   p.dropPiece(3);
 	ASSERT_EQ(p.gameState(), X);
+}
+
+TEST(PiezasTest, Owins)
+{
+  Piezas p;
+  p.dropPiece(1);
+  p.dropPiece(0);
+  p.dropPiece(2);
+  p.dropPiece(0);
+  p.dropPiece(3);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.dropPiece(3);
+	ASSERT_EQ(p.gameState(), O);
 }
