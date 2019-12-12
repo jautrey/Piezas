@@ -127,10 +127,6 @@ TEST(PiezasTest, checkBlankPiece)
 TEST(PiezasTest, resetBoard)
 {
   Piezas p;
-  p.dropPiece(0);
-  p.dropPiece(1);
-  p.dropPiece(2);
-  p.dropPiece(0);
   p.reset();
 	ASSERT_EQ(p.pieceAt(0,0), Blank);
 }
@@ -142,5 +138,5 @@ TEST(PiezasTest, gameNotOver)
   p.dropPiece(1);
   p.dropPiece(2);
   p.dropPiece(3);
-	ASSERT_EQ(p.gameState(), Blank);
+	ASSERT_EQ(p.gameState(), Invalid);
 }
