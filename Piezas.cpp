@@ -123,10 +123,10 @@ Piece Piezas::gameState()
   int oScore = 1;
   for(int i = 0; i < BOARD_COLS; i++)
   {
-    for(int j = 0; j < BOARD_ROWS+1; j++)
+    for(int j = 0; j < BOARD_ROWS-1; j++)
     {
       //Pieces match
-      if(board[i][j] != Blank && board[j][i] == board[j][i+1])
+      if(board[i][j] != Blank && board[j][i] == board[j+1][i])
       {
         //three or more in a row
         if(lastPiece == board[i][j])
