@@ -85,7 +85,7 @@ TEST(PiezasTest, pieceAtLow)
 	ASSERT_EQ(p.pieceAt(-1,0), Invalid);
 }
 
-TEST(PiezasTest, pieceAtLow)
+TEST(PiezasTest, pieceAtLow2)
 {
   Piezas p;
 	ASSERT_EQ(p.pieceAt(0,-1), Invalid);
@@ -295,7 +295,7 @@ TEST(PiezasTest, tieTwos)
 	ASSERT_EQ(p.gameState(), Blank);
 }
 
-TEST(PiezasTest, tieTwos)
+TEST(PiezasTest, tieOnes)
 {
   Piezas p;
   p.dropPiece(0);
