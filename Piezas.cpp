@@ -104,5 +104,19 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
+
+  //game not over
+  for(int i = 0; i < BOARD_COLS; i++)
+  {
+    for(int j = 0; j < BOARD_ROWS; j++)
+    {
+      if(board[j][i] == Blank)
+      {
+        return Invalid;
+      }
+    }
+  }
+
+  
     return Blank;
 }
