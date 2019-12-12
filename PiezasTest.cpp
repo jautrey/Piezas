@@ -91,7 +91,6 @@ TEST(PiezasTest, pieceAtLow2)
 	ASSERT_EQ(p.pieceAt(0,-1), Invalid);
 }
 
-
 TEST(PiezasTest, pieceRowOne)
 {
   Piezas p;
