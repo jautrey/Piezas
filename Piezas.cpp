@@ -32,11 +32,11 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-  for(int i = 0; i < BOARD_ROWS; i++)
-  {
-    board[i].clear();
-  }
-  // board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
+  // for(int i = 0; i < BOARD_ROWS; i++)
+  // {
+  //   board[i].clear();
+  // }
+  board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
 }
 
 /**
@@ -117,17 +117,62 @@ Piece Piezas::gameState()
       }
     }
   }
-  Piece cur
+
+  Piece lastPiece = Invalid;
+  int lastStreak = 1;
+  int xScore = 1;
+  int oScore = 1;
   for(int i = 0; i < BOARD_COLS; i++)
   {
-    for(int j = 0; j < BOARD_ROWS; j++)
+    for(int j = 0; j < BOARD_ROWS-1; j++)
     {
-      if(board[j][i] == board[j][i])
+      //Pieces match
+      if(board[i][j] != Blank && board[j][i] == board[j][i+1])
       {
-
+        //three or more in a row
+        if(lastPiece == board[i][j])
+        {
+          lastStreak++;
+          if(board[i][j] == X && lastStreak > xScore)
+          {
+            xScore = lastStreak;
+          }
+          if(board[i][j] == O && lastStreak > oScore)
+          {
+            oScore = lastStreak;
+          }
+        }
+        //two in a row
+        else
+        {
+          if(board[i][j] == X && lastStreak > xScore)
+          {
+            xScore = 2;
+          }
+          if(board[i][j] == O && lastStreak > oScore)
+          {
+            oScore = 2;
+          }
+          lastStreak = 1;
+        }
+        lastPiece = board[i][j];
       }
+      lastPiece = Invalid;
+      lastStreak = 1;
     }
   }
-  return Blank;
+
+  if(xScore > oScore)
+  {
+    return X;
+  }
+  else if(xScore < oScore)
+  {
+    return X;
+  }
+  else
+  {
+    return Blank;
+  }
 
 }
