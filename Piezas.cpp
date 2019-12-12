@@ -36,7 +36,7 @@ void Piezas::reset()
   {
     board[i].clear();
   }
-  board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
+  // board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
 }
 
 /**
@@ -117,6 +117,5 @@ Piece Piezas::gameState()
     }
   }
 
-  
-    return Blank;
+
 }
