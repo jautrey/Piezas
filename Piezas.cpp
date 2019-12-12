@@ -140,18 +140,18 @@ Piece Piezas::gameState()
           }
         }
         //two in a row
-        else
-        {
-          if(board[j][i] == X && lastStreak > xScore)
-          {
-            xScore = 2;
-          }
-          if(board[j][i] == O && lastStreak > oScore)
-          {
-            oScore = 2;
-          }
-          lastStreak = 1;
-        }
+        // else
+        // {
+        //   if(board[j][i] == X && lastStreak > xScore)
+        //   {
+        //     xScore = 2;
+        //   }
+        //   if(board[j][i] == O && lastStreak > oScore)
+        //   {
+        //     oScore = 2;
+        //   }
+        //   lastStreak = 1;
+        // }
         lastPiece = board[j][i];
       }
     }
@@ -180,18 +180,18 @@ Piece Piezas::gameState()
           }
         }
         //two in a row
-        else
-        {
-          if(board[j][i] == X && lastStreak > xScore)
-          {
-            xScore = 2;
-          }
-          if(board[j][i] == O && lastStreak > oScore)
-          {
-            oScore = 2;
-          }
-          lastStreak = 1;
-        }
+        // else
+        // {
+        //   if(board[j][i] == X && lastStreak > xScore)
+        //   {
+        //     xScore = 2;
+        //   }
+        //   if(board[j][i] == O && lastStreak > oScore)
+        //   {
+        //     oScore = 2;
+        //   }
+        //   lastStreak = 1;
+        // }
         lastPiece = board[j][i];
       }
     }
