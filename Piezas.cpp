@@ -32,11 +32,9 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-  // for(int i = 0; i < BOARD_ROWS; i++)
-  // {
-  //   board[i].clear();
-  // }
-  board.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
+  std::vector < std::vector<Piece> > newBoard;
+  newBoard.resize(BOARD_ROWS, std::vector<Piece>(BOARD_COLS, Blank));
+  board = newBoard;
 }
 
 /**
@@ -161,45 +159,46 @@ Piece Piezas::gameState()
     }
   }
 
-  // for(int i = 0; i < BOARD_COLS-1; i++)
-  // {
-  //   for(int j = 0; j < BOARD_ROWS; j++)
-  //   {
-  //     //Pieces match
-  //     if(board[i][j] != Blank && board[j][i] == board[j][i+1])
-  //     {
-  //       //three or more in a row
-  //       if(lastPiece == board[i][j])
-  //       {
-  //         lastStreak++;
-  //         if(board[i][j] == X && lastStreak > xScore)
-  //         {
-  //           xScore = lastStreak;
-  //         }
-  //         if(board[i][j] == O && lastStreak > oScore)
-  //         {
-  //           oScore = lastStreak;
-  //         }
-  //       }
-  //       //two in a row
-  //       else
-  //       {
-  //         if(board[i][j] == X && lastStreak > xScore)
-  //         {
-  //           xScore = 2;
-  //         }
-  //         if(board[i][j] == O && lastStreak > oScore)
-  //         {
-  //           oScore = 2;
-  //         }
-  //         lastStreak = 1;
-  //       }
-  //       lastPiece = board[i][j];
-  //     }
-  //     lastPiece = Invalid;
-  //     lastStreak = 1;
-  //   }
-  // }
+  for(int j = 0; j < BOARD_ROWS; j++)
+  {
+    for(int i = 0; i < BOARD_COLS-1; i++)
+    {
+      //Pieces match
+      if(board[j][i] != Blank && board[j][i] == board[j][i+1])
+      {
+        //three or more in a row
+        if(lastPiece == board[j][i])
+        {
+          lastStreak++;
+          if(board[j][i] == X && lastStreak > xScore)
+          {
+            xScore = lastStreak;
+          }
+          if(board[j][i] == O && lastStreak > oScore)
+          {
+            oScore = lastStreak;
+          }
+        }
+        //two in a row
+        else
+        {
+          if(board[j][i] == X && lastStreak > xScore)
+          {
+            xScore = 2;
+          }
+          if(board[j][i] == O && lastStreak > oScore)
+          {
+            oScore = 2;
+          }
+          lastStreak = 1;
+        }
+        lastPiece = board[j][i];
+      }
+      lastPiece = Invalid;
+      lastStreak = 1;
+    }
+  }
+
 
   if(xScore > oScore)
   {
