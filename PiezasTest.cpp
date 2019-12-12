@@ -213,3 +213,39 @@ TEST(PiezasTest, Owins)
   p.dropPiece(2);
 	ASSERT_EQ(p.gameState(), O);
 }
+
+TEST(PiezasTest, XwinsHoriz)
+{
+  Piezas p;
+  p.dropPiece(0);//x
+  p.dropPiece(0);
+  p.dropPiece(1);//x
+  p.dropPiece(1);
+  p.dropPiece(2);//x
+  p.dropPiece(0);
+  p.dropPiece(3);//x
+  p.dropPiece(1);
+  p.dropPiece(2);//x
+  p.dropPiece(3);
+  p.dropPiece(3);//x
+  p.dropPiece(2);
+	ASSERT_EQ(p.gameState(), O);
+}
+
+TEST(PiezasTest, OwinsHoriz)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(2);
+  p.dropPiece(0);
+  p.dropPiece(3);
+  p.dropPiece(1);
+  p.dropPiece(3);
+  p.dropPiece(2);
+  p.dropPiece(3);
+	ASSERT_EQ(p.gameState(), O);
+}

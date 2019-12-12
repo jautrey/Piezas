@@ -154,9 +154,9 @@ Piece Piezas::gameState()
         }
         lastPiece = board[j][i];
       }
-      lastPiece = Invalid;
-      lastStreak = 1;
     }
+    lastPiece = Invalid;
+    lastStreak = 1;
   }
 
   for(int j = 0; j < BOARD_ROWS; j++)
@@ -194,9 +194,9 @@ Piece Piezas::gameState()
         }
         lastPiece = board[j][i];
       }
-      lastPiece = Invalid;
-      lastStreak = 1;
     }
+    lastPiece = Invalid;
+    lastStreak = 1;
   }
 
 
