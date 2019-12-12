@@ -67,6 +67,31 @@ TEST(PiezasTest, rowOverflow)
 	ASSERT_EQ(p.dropPiece(0), Invalid);
 }
 
+TEST(PiezasTest, pieceAtHigh)
+{
+  Piezas p;
+	ASSERT_EQ(p.pieceAt(4,0), Invalid);
+}
+
+TEST(PiezasTest, pieceAtHigh2)
+{
+  Piezas p;
+	ASSERT_EQ(p.pieceAt(0,4), Invalid);
+}
+
+TEST(PiezasTest, pieceAtLow)
+{
+  Piezas p;
+	ASSERT_EQ(p.pieceAt(-1,0), Invalid);
+}
+
+TEST(PiezasTest, pieceAtLow)
+{
+  Piezas p;
+	ASSERT_EQ(p.pieceAt(0,-1), Invalid);
+}
+
+
 TEST(PiezasTest, pieceRowOne)
 {
   Piezas p;
@@ -248,4 +273,42 @@ TEST(PiezasTest, OwinsHoriz)
   p.dropPiece(2);
   p.dropPiece(3);
 	ASSERT_EQ(p.gameState(), O);
+}
+
+TEST(PiezasTest, tieTwos)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.reset();
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(3);
+  p.dropPiece(2);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.dropPiece(2);
+  p.dropPiece(3);
+	ASSERT_EQ(p.gameState(), Blank);
+}
+
+TEST(PiezasTest, tieTwos)
+{
+  Piezas p;
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(0);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(1);
+  p.dropPiece(2);
+  p.dropPiece(2);
+  p.dropPiece(2);
+  p.dropPiece(3);
+  p.dropPiece(3);
+  p.dropPiece(3);
+	ASSERT_EQ(p.gameState(), Blank);
 }
